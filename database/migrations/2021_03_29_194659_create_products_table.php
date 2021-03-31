@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->tinyinteger('status')->default(0);
             $table->integer('offer_price')->nullable();
+            $table->string('filenames');
             $table->timestamps();
         });
     }

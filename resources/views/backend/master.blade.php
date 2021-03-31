@@ -47,6 +47,17 @@
 
 <!-- PAGE SCRIPTS -->
 <script src="{{asset('backend_assets/dist/js/pages/dashboard2.js')}}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $(".btn-success").click(function(){ 
+          var lsthmtl = $(".clone").html();
+          $(".increment").after(lsthmtl);
+      });
+      $("body").on("click",".btn-danger",function(){ 
+          $(this).parents(".hdtuto").remove();
+      });
+    });
+</script>
 <script>
     $(function () {
       //Initialize Select2 Elements

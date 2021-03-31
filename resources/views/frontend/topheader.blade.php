@@ -1,7 +1,11 @@
 <?php
 use Illuminate\Support\Facades\Session;
 
-
+use App\Http\Controllers\CartController;
+$total = 0;
+if(Session::has('users')){
+  $total = CartController::cartItem();
+}
 
 ?>
 <div class="header-most-top">
@@ -72,7 +76,8 @@ use Illuminate\Support\Facades\Session;
 							<input type="hidden" name="cmd" value="_cart">
 							<input type="hidden" name="display" value="1">
 							<button class="w3view-cart" type="submit" name="submit" value="">
-								<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+							
+								<i class="fa fa-cart-arrow-down" value="{{$total}}" aria-hidden="true"></i>
 							</button>
 						</form>
 					</div>

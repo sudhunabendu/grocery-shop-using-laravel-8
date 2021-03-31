@@ -17,7 +17,8 @@
       </div><!-- /.container-fluid -->
     </div>
    <div class="card card-primary">
-   @include('backend.message')
+   <!-- @include('backend.message') -->
+   {{View::make('backend.message')}}
    <div class="card-header">
       <h3 class="card-title">Quick Example</h3>
         </div>        
@@ -55,6 +56,11 @@
                   </div>
 
                   <div class="form-group">
+                    <label for="exampleInputEmail1">Weight</label>
+                    <input type="text" name="weight" class="form-control" placeholder="Enter Weight" required>
+                  </div>
+
+                  <div class="form-group">
                     <label for="exampleInputEmail1">Price</label>
                     <input type="number" name="price" class="form-control" placeholder="Enter Price" required>
                   </div>
@@ -64,7 +70,7 @@
                     <input type="number" name="offer_price" class="form-control" placeholder="Enter Offer Price" required>
                   </div>
 
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
@@ -75,7 +81,22 @@
                         <span class="input-group-text" id="">Upload</span>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
+                  <div class="input-group hdtuto control-group lst increment" >
+      <input type="file" name="filenames[]" class="myfrm form-control">
+      <div class="input-group-btn"> 
+        <button class="btn btn-success" type="button"><i class="fldemo glyphicon glyphicon-plus"></i>Add</button>
+      </div>
+    </div>
+    <div class="clone hide">
+      <div class="hdtuto control-group lst input-group" style="margin-top:10px">
+        <input type="file" name="filenames[]" class="myfrm form-control">
+        <div class="input-group-btn"> 
+          <button class="btn btn-danger" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
+        </div>
+      </div>
+    </div>  
+                  
                 </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
@@ -85,5 +106,4 @@
    </div>
  @endsection
    
-   
-  
+ 

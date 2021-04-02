@@ -31,6 +31,11 @@ if(Session::has('users')){
 						<a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
 							<span class="fa fa-map-marker" aria-hidden="true"></span> Shop Locator</a>
 					</li>
+					<!-- <li>
+						<a  href="/cartlist">
+							<span class="fa fa-map-marker" aria-hidden="true"></span> Cart</a>
+					</li> -->
+					<!-- <a href=></a> -->
 					<li>
 						<a href="#" data-toggle="modal" data-target="#myModal1">
 							<span class="fa fa-truck" aria-hidden="true"></span>Track Order</a>
@@ -70,18 +75,20 @@ if(Session::has('users')){
 				</div>
 				<!-- //search -->
 				<!-- cart details -->
+				
 				<div class="top_nav_right">
 					<div class="wthreecartaits wthreecartaits2 cart cart box_1">
 						<form action="#" method="post" class="last">
 							<input type="hidden" name="cmd" value="_cart">
 							<input type="hidden" name="display" value="1">
 							<button class="w3view-cart" type="submit" name="submit" value="">
-							
+							{{$total}}
 								<i class="fa fa-cart-arrow-down" value="{{$total}}" aria-hidden="true"></i>
 							</button>
 						</form>
 					</div>
 				</div>
+				
 				<!-- //cart details -->
 				<div class="clearfix"></div>
 			</div>

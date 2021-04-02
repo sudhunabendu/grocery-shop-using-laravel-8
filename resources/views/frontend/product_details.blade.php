@@ -55,8 +55,9 @@
         </div>
       </div>
     </div>
+    
     <div class="col-md-7 single-right-left simpleCart_shelfItem">
-      <h3>Zeeba Premium Basmati Rice - 5 KG</h3>
+      <h3>{{$product['name']}}</h3>
       <div class="rating1">
         <span class="starRating">
           <input id="rating5" type="radio" name="rating" value="5">
@@ -72,8 +73,8 @@
         </span>
       </div>
       <p>
-        <span class="item_price">$950.00</span>
-        <del>$1300.00</del>
+        <span class="item_price">&#8377;{{$product['offer_price']}}</span>
+        <del>&#8377;{{$product['price']}}</del>
         <label>Free delivery</label>
       </p>
       <div class="single-infoagile">
@@ -89,7 +90,7 @@
           </li>
           <li>
             1 offer from
-            <span class="item_price">$950.00</span>
+            <span class="item_price">&#8377;{{$product['offer_price']}}</span>
           </li>
         </ul>
       </div>
@@ -118,18 +119,16 @@
       </div>
       <div class="occasion-cart">
         <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-          <form action="#" method="post">
+          <form action="/add_to_cart" method="post">
+          @csrf
             <fieldset>
-              <input type="hidden" name="cmd" value="_cart" />
-              <input type="hidden" name="add" value="1" />
-              <input type="hidden" name="business" value=" " />
-              <input type="hidden" name="item_name" value="Zeeba Premium Basmati Rice - 5 KG" />
-              <input type="hidden" name="amount" value="950.00" />
-              <input type="hidden" name="discount_amount" value="1.00" />
-              <input type="hidden" name="currency_code" value="USD" />
-              <input type="hidden" name="return" value=" " />
-              <input type="hidden" name="cancel_return" value=" " />
-              <input type="submit" name="submit" value="Add to cart" class="button" />
+            <input type="hidden" name="product_id" value="{{$product['id']}}" />
+												<input type="hidden" name="name" value="{{$product['name']}}" />
+												<input type="hidden" name="category_id" value="{{$product['category_id']}}" />
+												<input type="hidden" name="description" value="{{$product['description']}}" />
+												<input type="hidden" name="weight" value="{{$product['weight']}}" />
+												<input type="hidden" name="offer_price" value="{{$product['offer_price']}}" />
+												<input type="submit" name="submit" value="Add to cart" class="button" />
             </fieldset>
           </form>
         </div>
@@ -137,6 +136,7 @@
       </div>
 
     </div>
+  
     <div class="clearfix"> </div>
   </div>
 </div>

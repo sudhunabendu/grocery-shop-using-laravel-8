@@ -28,7 +28,7 @@ Route::get('/logout', function () {
   return redirect('/');;
 });
 Route::get('/',[FrontController::class,'index']);
-Route::get('/product_details',[FrontController::class,'Product_Details']);
+Route::get('product_details/{id}',[FrontController::class,'Product_Details']);
 Route::post('/signup',[UserController::class,'SignUp']);
 Route::post('/login',[UserController::class,'login']);
 Route::get('/products',[ProductController::class,'index']);
@@ -37,7 +37,7 @@ Route::get('/addproducts',[ProductController::class,'OpenForm']);
 Route::post('/addproduct',[ProductController::class,'store']);
 Route::get('/addcategory',[AdminController::class,'AddCategory']);
 Route::post('/addcategory',[AdminController::class,'insertCategory']);
-Route::post('/add_to_cart',[CartController::class,'addToCart']);
+Route::get('/cartlist',[FrontController::class,'CartList']);
 
 
 

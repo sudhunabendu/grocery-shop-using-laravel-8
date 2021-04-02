@@ -16,7 +16,13 @@ class FrontController extends Controller
     //      $data = Product::all();
     //      return view('frontend.body', ['product' => $data]);
     //  }
-    public function Product_Details(){
-        return view('frontend.product_details');
+    public function Product_Details($id){
+        $data = Product::find($id);
+        return view('frontend.product_details', ["product" => $data]);
+    }
+
+    public function CartList(){
+        
+        return view('frontend.cartlist');
     }
 }

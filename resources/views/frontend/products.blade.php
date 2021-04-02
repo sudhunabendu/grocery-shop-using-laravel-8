@@ -267,18 +267,18 @@
 									<img src="{{asset('files/'.$p->filenames)}}" alt="">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Quick View</a>
+											<a href="product_details/{{$p['id']}}" class="link-product-add-cart">Quick View</a>
 										</div>
 									</div>
 									<span class="product-new-top">New</span>
 								</div>
 								<div class="item-info-product ">
 									<h4>
-										<a href="single.html">{{$p->name}}</a>
+										<a href="product_details/{{$p['id']}}">{{$p->name}}</a>
 									</h4>
 									<div class="info-product-price">
-										<span class="item_price">{{$p->offer_price}}</span>
-										<del>{{$p->price}}</del>
+										<span class="item_price">&#8377;{{$p->offer_price}}</span>
+										<del>&#8377;{{$p->price}}</del>
 									</div>
 									<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
 										<form action="/add_to_cart" method="POST">

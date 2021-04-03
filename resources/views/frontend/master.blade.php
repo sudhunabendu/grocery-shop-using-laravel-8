@@ -1,3 +1,6 @@
+<?php
+use Illuminate\Support\Facades\Session;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,11 +35,51 @@
 @yield('content')
 {{View::make('frontend.footer')}}
 
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+     <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Your Cart Items is &nbsp; </h4>
+      </div>
+			@if(Session::has('users'))
+      <div class="modal-body">
+		<table class="table">
+		<tr>
+			<th>Product Item</th>
+			<th>description</th>
+		  <th>Weight</th>
+			<th>Price</th>
+		</tr>
+		@foreach($product as $ci)
+		<tr>
+		<td>{{$ci['name']}}</td>
+		<td>{{$ci['description']}}</td>
+		<td>{{$ci['weight']}}</td>
+		<td>{{$ci['offer_price']}}</td>
+		</tr>	
+		@endforeach
+		</table>
 
-<!-- <script>
+			
+			@else
+			<div class="modal-body">
+        <p>Your Cart Is Empty!</p>
+      </div>
+		<!-- <form action="">
+		<input type="text" name="" id="" value="">
+		<input type="text" name="" id="" value="">
+		</form> -->
+      </div>
+			@endif
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div> 
+  </div>
+</div>
 
-
-</script> -->
 
 <script src="{{asset('assets/js/jquery-2.1.4.min.js')}}"></script>
 	<!-- //jquery -->
@@ -67,7 +110,7 @@
 
 	<!-- cart-js -->
 	<script src="{{asset('assets/js/minicart.js')}}"></script>
-	<script>
+	<!-- <script>
 		paypalm.minicartk.render(); //use only unique class names other than paypalm.minicartk.Also Replace same class name in css and minicart.min.js
 
 		paypalm.minicartk.cart.on('checkout', function (evt) {
@@ -86,7 +129,7 @@
 				evt.preventDefault();
 			}
 		});
-	</script>
+	</script> -->
 	<!-- //cart-js -->
 
 	<!-- price range (top products) -->

@@ -16,7 +16,7 @@ if(Session::has('users')){
 			<!-- header-bot-->
 			<div class="col-md-4 logo_agile">
 				<h1>
-					<a href="index.html">
+					<a href="/">
 						<span>G</span>rocery
 						<span>S</span>hoppy
 						<img src="{{asset('assets/images/logo2.png')}}" alt=" ">
@@ -78,17 +78,14 @@ if(Session::has('users')){
 				
 				<div class="top_nav_right">
 					<div class="wthreecartaits wthreecartaits2 cart cart box_1">
-						<form action="#" method="post" class="last">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="display" value="1">
-							<button class="w3view-cart" type="submit" name="submit" value="">
-							{{$total}}
-								<i class="fa fa-cart-arrow-down" value="{{$total}}" aria-hidden="true"></i>
+							<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+							<span>{{$total}}</span> 
+							<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
 							</button>
-						</form>
+						<!-- </form> -->
 					</div>
 				</div>
-				
+<!-- Modal -->				
 				<!-- //cart details -->
 				<div class="clearfix"></div>
 			</div>
@@ -583,7 +580,7 @@ if(Session::has('users')){
 						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav menu__list">
 								<li class="active">
-									<a class="nav-stylehead" href="index.html">Home
+									<a class="nav-stylehead" href="/">Home
 										<span class="sr-only">(current)</span>
 									</a>
 								</li>

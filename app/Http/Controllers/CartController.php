@@ -21,14 +21,11 @@ class CartController extends Controller
             $cart->save();
             return redirect('/products');
         } else {
+            // return redirect('/');
+          echo "<script> 
+           alert('please login first then purchase the product');
+            </script>";
             return redirect('/');
-            // return "<script> 
-            // $(document).ready(function(){
-            //     $('a').keypress(function(){
-            //       $('#myModal1').modal('show');
-            //     });
-            //   });
-            // </script>";
         }
     }
 

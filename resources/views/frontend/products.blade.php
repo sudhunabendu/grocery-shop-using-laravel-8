@@ -1,4 +1,4 @@
-@extends('master')
+@extends('frontend.master')
 @section('content')
 <div class="page-head_agile_info_w3l">
 

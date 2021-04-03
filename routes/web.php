@@ -38,6 +38,7 @@ Route::post('/addproduct',[ProductController::class,'store']);
 Route::get('/addcategory',[AdminController::class,'AddCategory']);
 Route::post('/addcategory',[AdminController::class,'insertCategory']);
 Route::get('/cartlist',[FrontController::class,'CartList']);
+Route::post('/add_to_cart',[CartController::class,'addToCart']);
 
 
 
